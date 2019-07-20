@@ -1,0 +1,67 @@
+{
+    "name": "category",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "options": {
+      "validateUpsert": true
+    },
+    "mysql": {
+      "schema": "project",
+      "table": "category"
+    },
+    "properties": {
+      "id": {
+        "type": "number",
+        "required": true,
+        "mysql": {
+          "columnName": "id",
+          "dataType": "int",
+          "nullable": "N"
+        }
+      },
+      "name": {
+        "type": "string",
+        "required": true,
+        "mysql": {
+          "columnName": "name",
+          "dataType": "varchar",
+          "nullable": "N"
+        }
+      }
+      },
+    "validations": [],
+    "relations": {},
+    "acls": [],
+    "methods": {
+        "saveOrUpdate": {
+            "http":{
+                "verb": "POST",
+                "path": "/saveOrUpdate"
+            },
+            "description": "create or edit category",
+            "accepts": [
+                {
+                    "arg": "data", 
+                    "type": "object", 
+                    "http": {"source":"body"},
+                    "required": true
+                }
+            ],
+            "returns": {"arg":"data","type": "object","root":true}
+        },
+        "list": {
+            "http": {
+              "verb": "get",
+              "path": "/list"
+            },
+            "description": "Get category details",
+            "accepts": [],
+            "returns": {
+              "arg": "data",
+              "type": "object",
+              "root": true
+            }
+          }
+    }
+  }
+  

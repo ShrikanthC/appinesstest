@@ -1,0 +1,36 @@
+{
+  "name": "userRole",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mysql": {
+    "schema": "project",
+    "table": "user_role"
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true,
+      "mysql": {
+        "columnName": "id",
+        "dataType": "int",
+        "nullable": "N"
+      }
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "mysql": {
+        "columnName": "name",
+        "dataType": "varchar",
+        "nullable": "N"
+      }
+    }
+    },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
